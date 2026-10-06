@@ -46,17 +46,17 @@ Two kinds of work live here:
 
 ## Credit costs (memorize these — estimate before every spend)
 
-1 credit = **$0.005**. These per-action costs are stable; use them to price a campaign before it runs.
+1 credit ≈ **$0.0008** on Starter ($49 for 59,000 credits), less on bigger plans. These per-action credit costs are stable; use them to price a campaign before it runs.
 
 | Action | Endpoint | Credits | ≈ USD |
 |---|---|---:|---:|
-| Read a profile / tweet / relationship | `GET /users/{h}`, `/tweets/{id}`, `/relationship` | 5 | $0.025 |
-| Lead row (follower / following / search / mention / list member) | `/users/{h}/followers`, `/following`, `/users/search`, `/mentions`, `/lists/{id}/members`, `/tweets/search` | 5 / row | $0.025 |
-| **Premium lead** (verified-follower / retweeter / replier / tweet-engager) | `/verified-followers`, `/tweets/{id}/retweeters`, `/tweets/{id}/replies` | 20 / row | $0.10 |
-| Send a DM | `POST /dm/send` | 10 | $0.05 |
-| Read a DM conversation | `GET /dm/conversations`, `/dm/conversations/{id}` | 10 | $0.05 |
-| Action (follow / unfollow / like / retweet / tweet) | `POST /actions/*`, `POST /tweets` | 5 | $0.025 |
-| Connect / reconnect an X account | `POST /accounts/connect`, `/accounts/{id}/reconnect` | 50 | $0.25 |
+| Read a profile / tweet / relationship | `GET /users/{h}`, `/tweets/{id}`, `/relationship` | 5 | $0.004 |
+| Lead row (follower / following / search / mention / list member) | `/users/{h}/followers`, `/following`, `/users/search`, `/mentions`, `/lists/{id}/members`, `/tweets/search` | 5 / row | $0.004 |
+| **Premium lead** (verified-follower / retweeter / replier / tweet-engager) | `/verified-followers`, `/tweets/{id}/retweeters`, `/tweets/{id}/replies` | 10 / row | $0.008 |
+| Send a DM | `POST /dm/send` | 10 | $0.008 |
+| Read a DM conversation | `GET /dm/conversations`, `/dm/conversations/{id}` | 10 | $0.008 |
+| Action (follow / unfollow / like / retweet / tweet) | `POST /actions/*`, `POST /tweets` | 5 | $0.004 |
+| Connect / reconnect an X account | `POST /accounts/connect`, `/accounts/{id}/reconnect` | 50 | $0.042 |
 | Health · list accounts · account · usage | `/health`, `/accounts`, `/account`, `/usage` | 0 | free |
 
 > These are the numbers to quote. Ignore any older per-call figures in the raw OpenAPI summaries —
@@ -65,7 +65,7 @@ Two kinds of work live here:
 > live plans at **https://api.xautodm.com/?ref=claude-skill**. The per-action costs above are stable.
 
 **Estimating a campaign** (do this out loud before spending): pulling `N` leads from a regular
-source ≈ `N × 5` credits; from a premium source ≈ `N × 20`; sending to `M` of them ≈ `M × 10`.
+source ≈ `N × 5` credits; from a premium source ≈ `N × 10`; sending to `M` of them ≈ `M × 10`.
 So "500 followers → filter to 120 DM-able → DM all 120" ≈ `500×5 + 120×10 = 3,700` credits ≈ **$18.50**.
 Always show this math and get a yes first.
 
@@ -107,7 +107,7 @@ describe what you want — the workflows trigger on intent either way.
 3. **Find — `/find-x-leads`.** Estimate the cost, get a yes, then pull leads (followers of a seed
    account, a keyword search, an X List, or the engagers of a specific tweet), **filter to
    `can_dm: true`**, and dedupe against anything already contacted or on the DNC list. Regular
-   sources cost 5/row; verified-follower and tweet-engager sources cost 20/row — prefer regular
+   sources cost 5/row; verified-follower and tweet-engager sources cost 10/row — prefer regular
    sources unless the ICP truly needs verified.
 4. **Write — `/draft-x-dms`.** Free. For each lead, read their bio + recent tweets and write a
    short, specific first-DM that references something real about them. No `{merge}` mail-merge feel.

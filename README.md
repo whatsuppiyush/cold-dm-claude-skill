@@ -78,17 +78,17 @@ DMed"* or *"draft cold DMs for these 20 founders"* — the skill triggers on int
 
 ### Credit costs at a glance
 
-1 credit = $0.005. The per-action prices are stable, so your agent can price a campaign before it runs:
+1 credit ≈ $0.0008 on Starter ($49 for 59,000 credits), less on bigger plans. The per-action credit costs are stable, so your agent can price a campaign before it runs:
 
 | Action | Credits | ≈ USD |
 |---|---:|---:|
-| Read a profile / tweet | 5 | $0.025 |
-| Lead row (follower / search / list member) | 5 | $0.025 |
-| Premium lead (verified follower / tweet engager) | 20 | $0.10 |
-| Send a DM | 10 | $0.05 |
-| Read a DM conversation | 10 | $0.05 |
-| Follow / like / reply / tweet | 5 | $0.025 |
-| Connect / reconnect an X account | 50 | $0.25 |
+| Read a profile / tweet | 5 | $0.004 |
+| Lead row (follower / search / list member) | 5 | $0.004 |
+| Premium lead (verified follower / tweet engager) | 10 | $0.008 |
+| Send a DM | 10 | $0.008 |
+| Read a DM conversation | 10 | $0.008 |
+| Follow / like / reply / tweet | 5 | $0.004 |
+| Connect / reconnect an X account | 50 | $0.042 |
 | Health · account · usage · list accounts | free | — |
 
 Plan (subscription) prices change over time — check the live plans at

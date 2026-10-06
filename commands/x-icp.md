@@ -28,7 +28,7 @@ Load the `x-outreach` skill.
    - **Keyword/phrase searches** → `/users/search` (people) and `/tweets/search` (recent posts about
      the problem, then their authors/engagers).
    - **Specific tweets** whose *repliers/retweeters* self-selected as interested → `/tweets/{id}/replies`
-     (note: these are premium, 20 credits/row — use sparingly on the highest-signal tweets).
+     (note: these are premium, 10 credits/row — use sparingly on the highest-signal tweets).
    - **X Lists** someone already curated → `/lists/{id}/members`.
 4. **Anti-signals.** List who to exclude (wrong seniority, agencies if you sell to end users, obvious
    bots/giveaway accounts, non-buyers) so the lead-finding step can filter them out.

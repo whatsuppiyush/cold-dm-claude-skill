@@ -16,7 +16,7 @@ Load the `x-outreach` skill. Read `references/account-safety.md` (pacing) and
    `POST /accounts/{id}/reconnect`. If no key / `$0` plan, stop and link the signup.
 2. **Refuse spam.** If the list is huge and untargeted, or the ask is spray-and-pray, **decline** and
    steer back to a tighter ICP and a smaller, better list. This skill does targeted outreach only.
-3. **Confirm the cost — explicitly.** Each DM costs **10 credits ($0.05)**. Show the math:
+3. **Confirm the cost — explicitly.** Each DM costs **10 credits (≈ $0.008 on Starter)**. Show the math:
    "Sending to <M> leads = M × 10 = <total> credits ≈ $X.XX, from a balance of <bal>. Paced over
    <days> at <cap>/day. Proceed?" **Wait for a clear yes.** Re-confirm if the list changes.
 4. **Pace it.** Respect the per-account daily cap from `references/account-safety.md` (conservative:

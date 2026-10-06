@@ -45,14 +45,14 @@ Every error is shaped:
 **Rule: on error, surface the message and stop. Only `rate_limited` (429) warrants an automatic
 retry — one, after a backoff. Never loop-retry `402/403/409`.**
 
-## Credit costs (source of truth — 1 credit = $0.005)
+## Credit costs (source of truth — 1 credit ≈ $0.0008 on Starter ($49 for 59,000 credits), less on bigger plans)
 
 | Cost | Applies to |
 |---:|---|
 | **0 (free)** | `GET /health` (no auth), `GET /accounts`, `GET /account`, `GET /usage` |
 | **5** (read) | `GET /users/{handle}`, `GET /users/by-id/{id}`, `GET /users/{handle}/tweets`, `GET /tweets/{id}`, `GET /relationship` |
 | **5 / row** (lead) | `GET /users/{handle}/followers`, `/following`, `GET /users/search`, `GET /users/{handle}/mentions`, `GET /tweets/search`, `GET /lists/{id}/members` |
-| **20 / row** (premium lead) | `GET /users/{handle}/verified-followers`, `GET /tweets/{id}/retweeters`, `GET /tweets/{id}/replies` |
+| **10 / row** (premium lead) | `GET /users/{handle}/verified-followers`, `GET /tweets/{id}/retweeters`, `GET /tweets/{id}/replies` |
 | **10** | `POST /dm/send` |
 | **10** | `GET /dm/conversations`, `GET /dm/conversations/{id}` |
 | **5** | `POST /actions/follow`, `/unfollow`, `/like`, `/retweet`, `POST /tweets` |
@@ -75,15 +75,15 @@ retry — one, after a backoff. Never loop-retry `402/403/409`.**
 - `GET /tweets/{id}` — a tweet.
 - `GET /relationship?source=&target=` — does source follow target?
 
-**Find leads (5/row regular · 20/row premium)**
+**Find leads (5/row regular · 10/row premium)**
 - `GET /users/{handle}/followers` — followers; **`can_dm` flag accurate here.**
 - `GET /users/{handle}/following` — accounts they follow.
 - `GET /users/search?q=` — users by keyword/bio.
 - `GET /users/{handle}/mentions` — tweets mentioning a handle (→ authors).
 - `GET /tweets/search?q=&product=Latest|Top` — tweets by query (→ authors/engagers).
 - `GET /lists/{id}/members` — members of an X List.
-- `GET /users/{handle}/verified-followers` — **premium (20/row).**
-- `GET /tweets/{id}/retweeters` · `GET /tweets/{id}/replies` — engagers of a tweet, **premium (20/row).**
+- `GET /users/{handle}/verified-followers` — **premium (10/row).**
+- `GET /tweets/{id}/retweeters` · `GET /tweets/{id}/replies` — engagers of a tweet, **premium (10/row).**
 
 **Connect accounts (free list/get; 50 to connect/reconnect)**
 - `GET /accounts` (free) · `GET /accounts/{id}` · `DELETE /accounts/{id}` (disconnect + purge creds).

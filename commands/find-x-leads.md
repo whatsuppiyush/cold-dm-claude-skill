@@ -18,8 +18,8 @@ Load the `x-outreach` skill. Read `references/api-reference.md`.
    - Keyword/bio user search → `GET /users/search?q=` — **5/row**
    - Recent posts about a topic → `GET /tweets/search?q=&product=Latest` — **5/row** (then keep authors)
    - Members of an X List → `GET /lists/{id}/members` — **5/row**
-   - Verified followers → `GET /users/{handle}/verified-followers` — **20/row** (premium)
-   - Repliers / retweeters of a tweet → `GET /tweets/{id}/replies` or `/retweeters` — **20/row** (premium)
+   - Verified followers → `GET /users/{handle}/verified-followers` — **10/row** (premium)
+   - Repliers / retweeters of a tweet → `GET /tweets/{id}/replies` or `/retweeters` — **10/row** (premium)
 3. **Estimate and confirm.** State plainly: "Pulling up to N rows from <source> ≈ N × <cost> credits
    ≈ $X.XX. Proceed?" Wait for a yes. Prefer regular (5) sources unless the ICP truly needs premium.
    Note that you're charged per profile **fetched**, not per profile that survives the `can_dm` filter,
